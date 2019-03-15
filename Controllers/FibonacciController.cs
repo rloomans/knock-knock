@@ -10,7 +10,7 @@ namespace AspNetCoreDemoApp.Controllers
 	{
 		// GET: api/fibonacci
 		[HttpGet]
-		public int64 Get(long n)
+		public long Get(long n)
 		{
 			return 1;
 		}
