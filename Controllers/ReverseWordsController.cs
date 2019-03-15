@@ -8,7 +8,7 @@ namespace AspNetCoreDemoApp.Controllers
 	[Route("api/[controller]")]
 	public class ReverseWordsController : ControllerBase
 	{
-		// GET: api/token
+		// GET: api/reversewords
 		[HttpGet]
 		public string Get(string sentence)
 		{

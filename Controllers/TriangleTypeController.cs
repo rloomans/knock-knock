@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 namespace AspNetCoreDemoApp.Controllers
 {
 	[Route("api/[controller]")]
-	public class TrinangleTypeController : ControllerBase
+	public class TriangleTypeController : ControllerBase
 	{
-		// GET: api/token
+		// GET: api/triangletype
 		[HttpGet]
 		public string Get(int a, int b, int c)
 		{
