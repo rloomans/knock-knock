@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
+using KnockKnockApi.Library;
 
 namespace AspNetCoreDemoApp.Controllers
 {
@@ -12,7 +13,7 @@ namespace AspNetCoreDemoApp.Controllers
 		[HttpGet]
 		public long Get(long n)
 		{
-			return 1;
+			return Fibonacci.Calculate(n);
 		}
 	}
 }

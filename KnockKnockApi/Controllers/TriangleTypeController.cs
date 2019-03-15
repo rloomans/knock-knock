@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
+using KnockKnockApi.Library;
 
 namespace AspNetCoreDemoApp.Controllers
 {
@@ -12,7 +13,9 @@ namespace AspNetCoreDemoApp.Controllers
 		[HttpGet]
 		public string Get(int a, int b, int c)
 		{
-			return "Triangle";
+            var triangle = new Triangle(a, b, c);
+
+			return triangle.Characterise();
 		}
 	}
 }

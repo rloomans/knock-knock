@@ -14,7 +14,8 @@ namespace KnockKnockApiTests
         public void CheckTriangleType(int a, int b, int c, string expected_result)
         {
             // Arrange
-            var triangle = new Triangle() { a = a, b = b, c = c };
+            var triangle = new Triangle(a, b, c);
+
             // Act
             var result = triangle.Characterise();
 
