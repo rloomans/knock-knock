@@ -12,6 +12,10 @@ namespace KnockKnockApiTests
         [InlineData(2, 1)]
         [InlineData(3, 2)]
         [InlineData(10, 55)]
+        [InlineData(-1, -1)]
+        [InlineData(-2, -1)]
+        [InlineData(-3, -2)]
+        [InlineData(-10, -55)]
         public void CheckFibonacci(long n, long expected_result)
         {
             // Act
