@@ -5,10 +5,12 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KnockKnockApi", "KnockKnockApi\KnockKnockApi.csproj", "{A989A407-C930-4722-92EC-E20744BA9E12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnockKnockApiTests", "KnockKnockApiTests\KnockKnockApiTests.csproj", "{2E266BC4-DC87-4E00-80ED-EA38C6362DBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KnockKnockApiTests", "KnockKnockApiTests\KnockKnockApiTests.csproj", "{2E266BC4-DC87-4E00-80ED-EA38C6362DBB}"
 	ProjectSection(ProjectDependencies) = postProject
 		{A989A407-C930-4722-92EC-E20744BA9E12} = {A989A407-C930-4722-92EC-E20744BA9E12}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnockKnockApiIntegrationTests", "KnockKnockApiIntegrationTests\KnockKnockApiIntegrationTests.csproj", "{C82AE735-E83F-4292-96B5-E45232373212}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +26,10 @@ Global
 		{2E266BC4-DC87-4E00-80ED-EA38C6362DBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E266BC4-DC87-4E00-80ED-EA38C6362DBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E266BC4-DC87-4E00-80ED-EA38C6362DBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C82AE735-E83F-4292-96B5-E45232373212}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C82AE735-E83F-4292-96B5-E45232373212}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C82AE735-E83F-4292-96B5-E45232373212}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C82AE735-E83F-4292-96B5-E45232373212}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

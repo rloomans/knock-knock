@@ -4,15 +4,15 @@ using KnockKnockApi.Library;
 namespace AspNetCoreDemoApp.Controllers
 {
 	[Route("api/[controller]")]
-	public class TriangleTypeController : ControllerBase
+	public class TriangleTypeController : Controller
 	{
 		// GET: api/triangletype
 		[HttpGet]
-		public string Get(int a, int b, int c)
+		public JsonResult Get(int a, int b, int c)
 		{
             var triangle = new Triangle(a, b, c);
 
-			return triangle.Characterise();
+			return Json(triangle.Characterise());
 		}
 	}
 }

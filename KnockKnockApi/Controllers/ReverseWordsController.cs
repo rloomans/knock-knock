@@ -3,13 +3,13 @@ using Microsoft.AspNetCore.Mvc;
 namespace AspNetCoreDemoApp.Controllers
 {
 	[Route("api/[controller]")]
-	public class ReverseWordsController : ControllerBase
+	public class ReverseWordsController : Controller
 	{
 		// GET: api/reversewords
 		[HttpGet]
-		public string Get(string sentence)
+		public JsonResult Get(string sentence)
 		{
-			return sentence;
+			return Json(sentence);
 		}
 	}
 }

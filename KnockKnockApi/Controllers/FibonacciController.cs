@@ -4,13 +4,13 @@ using KnockKnockApi.Library;
 namespace AspNetCoreDemoApp.Controllers
 {
 	[Route("api/[controller]")]
-	public class FibonacciController : ControllerBase
+	public class FibonacciController : Controller
 	{
 		// GET: api/fibonacci
 		[HttpGet]
-		public long Get(long n)
+		public JsonResult Get(long n)
 		{
-			return Fibonacci.Calculate(n);
+			return Json(Fibonacci.Calculate(n));
 		}
 	}
 }
