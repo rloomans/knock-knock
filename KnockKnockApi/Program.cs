@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 
 namespace KnockKnockApi
 {
+#pragma warning disable CS1591
+
     public class Program
     {
         public static void Main(string[] args)
@@ -14,4 +16,5 @@ namespace KnockKnockApi
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>();
     }
+#pragma warning restore CS1591
 }
