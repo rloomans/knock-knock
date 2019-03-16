@@ -1,15 +1,20 @@
 using Microsoft.AspNetCore.Mvc;
+using KnockKnockApi.Library;
 
 namespace AspNetCoreDemoApp.Controllers
 {
+	[Produces("application/json")]
 	[Route("api/[controller]")]
+	[ApiController]
 	public class ReverseWordsController : Controller
 	{
 		// GET: api/reversewords
 		[HttpGet]
-		public JsonResult Get(string sentence)
+		public JsonResult Get(string query)
 		{
-			return Json(sentence);
+			var words = new Words(query);
+
+			return Json(words.ReverseWords().ToString());
 		}
 	}
 }

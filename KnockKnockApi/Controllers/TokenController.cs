@@ -2,7 +2,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetCoreDemoApp.Controllers
 {
+	[Produces("application/json")]
 	[Route("api/[controller]")]
+	[ApiController]
 	public class TokenController : Controller
 	{
 		// GET: api/token

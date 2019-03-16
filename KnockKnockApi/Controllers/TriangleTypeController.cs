@@ -3,7 +3,9 @@ using KnockKnockApi.Library;
 
 namespace AspNetCoreDemoApp.Controllers
 {
+	[Produces("application/json")]
 	[Route("api/[controller]")]
+	[ApiController]
 	public class TriangleTypeController : Controller
 	{
 		// GET: api/triangletype
