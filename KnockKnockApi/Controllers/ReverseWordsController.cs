@@ -10,9 +10,9 @@ namespace AspNetCoreDemoApp.Controllers
 	{
 		// GET: api/reversewords
 		[HttpGet]
-		public JsonResult Get(string query)
+		public JsonResult Get(string sentence)
 		{
-			var words = new Words(query);
+			var words = new Words(sentence);
 
 			return Json(words.ReverseWords().ToString());
 		}

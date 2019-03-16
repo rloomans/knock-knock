@@ -15,7 +15,7 @@ namespace KnockKnockApiIntegrationTests
         }
 
         [Theory]
-        [InlineData("/api/ReverseWords?query=foo+bar")]
+        [InlineData("/api/ReverseWords?sentence=foo+bar")]
         public async Task GetToken(string url)
         {
             // Arrange
