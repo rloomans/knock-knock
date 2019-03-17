@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace KnockKnockApi.Library
 {
@@ -8,10 +9,14 @@ namespace KnockKnockApi.Library
 
         public static long Calculate(long n)
         {
+            if (n <= -93 || n >= 93) {
+                throw new System.ArgumentOutOfRangeException(nameof(n), "Invalid index");
+            }
+
             if (n == 0) return 0;
             if (n == 1) return 1;
 
-            if (n < 0) return (-1 * Calculate(-n));
+            if (n < 0) return (-1 * Calculate(-1 * n));
 
             long result;
 

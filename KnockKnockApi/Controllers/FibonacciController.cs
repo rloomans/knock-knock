@@ -19,7 +19,13 @@ namespace AspNetCoreDemoApp.Controllers
 		[HttpGet]
 		public JsonResult Get(long n)
 		{
-			return Json(Fibonacci.Calculate(n));
+			try {
+				return Json(Fibonacci.Calculate(n));
+			}
+			catch (System.ArgumentException e)
+            {
+                return Json(new { Error = e.ToString() });
+            }
 		}
 	}
 }
