@@ -16,6 +16,7 @@ namespace KnockKnockApiIntegrationTests
 
         [Theory]
         [InlineData("/api/TriangleType?a=1&b=2&c=3")]
+        [InlineData("/api/TriangleType?a=2147483647&b=2147483647&c=2147483647")]
         public async Task GetToken(string url)
         {
             // Arrange

@@ -15,7 +15,13 @@ namespace KnockKnockApiIntegrationTests
         }
 
         [Theory]
+        [InlineData("/api/ReverseWords?sentence=")]
         [InlineData("/api/ReverseWords?sentence=foo+bar")]
+        [InlineData("/api/ReverseWords?sentence=This%20is%20a%20snark:%20%E2%B8%AE")]
+        [InlineData("/api/ReverseWords?sentence=cat")]
+        [InlineData("/api/ReverseWords?sentence=two%20%20spaces")]
+        [InlineData("/api/ReverseWords?sentence=%20leading%20space")]
+        [InlineData("/api/ReverseWords?sentence=trailing%20space%20")]
         public async Task GetToken(string url)
         {
             // Arrange

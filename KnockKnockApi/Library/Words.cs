@@ -8,8 +8,10 @@ namespace KnockKnockApi.Library
         private List<string> _words = new List<string>();
 
         public Words(string sentence) {
-            foreach(var word in sentence.Split(" ")) {
-                _words.Add(word);
+            if (!String.IsNullOrEmpty(sentence)) {
+                foreach(var word in sentence.Split(" ")) {
+                    _words.Add(word);
+                }
             }
         }
 

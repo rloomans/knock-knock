@@ -8,6 +8,11 @@ namespace KnockKnockApiTests
     {
         [Theory]
         [InlineData("foo bar", "oof rab")]
+        [InlineData("foo", "oof")]
+        [InlineData("foo ", "oof ")]
+        [InlineData(" bar", " rab")]
+        [InlineData("foo!", "!oof")]
+        [InlineData("Foo", "ooF")]
         public void ReverseWords(string sentence, string expected_result)
         {
             // Arrange
