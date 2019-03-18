@@ -22,7 +22,7 @@ namespace KnockKnockApiIntegrationTests
         [InlineData("/api/ReverseWords?sentence=two%20%20spaces")]
         [InlineData("/api/ReverseWords?sentence=%20leading%20space")]
         [InlineData("/api/ReverseWords?sentence=trailing%20space%20")]
-        public async Task GetToken(string url)
+        public async Task GetReversedWords(string url)
         {
             // Arrange
             var client = _factory.CreateClient();

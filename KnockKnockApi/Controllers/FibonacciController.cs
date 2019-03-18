@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using KnockKnockApi.Library;
 
-namespace AspNetCoreDemoApp.Controllers
+namespace KnockKnockApi.Controllers
 {
 	/// <summary>
 	/// Returns the nth number in the fibonacci sequence.

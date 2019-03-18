@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace AspNetCoreDemoApp.Controllers
+namespace KnockKnockApi.Controllers
 {
 	[Produces("application/json")]
 	[Route("api/[controller]")]
