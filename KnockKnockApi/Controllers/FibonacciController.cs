@@ -17,14 +17,14 @@ namespace KnockKnockApi.Controllers
 		/// <param name="n">The index (n) of the fibonacci sequence</param>
 		// GET: api/fibonacci
 		[HttpGet]
-		public JsonResult Get(long n)
+		public IActionResult Get(long n)
 		{
 			try {
-				return Json(Fibonacci.Calculate(n));
+				return Ok(Fibonacci.Calculate(n));
 			}
 			catch (System.ArgumentException e)
             {
-                return Json(new { Error = e.Message });
+                return BadRequest(new { Error = e.Message });
             }
 		}
 	}

@@ -34,6 +34,8 @@ namespace KnockKnockApiTests
         }
 
         [Theory]
+        [InlineData(-93)]
+        [InlineData(93)]
         [InlineData(-9223372036854775808)]
         [InlineData(9223372036854775807)]
         public void CheckFibonacciThrows(long n)
