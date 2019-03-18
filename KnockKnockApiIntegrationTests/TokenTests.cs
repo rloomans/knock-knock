@@ -1,7 +1,10 @@
 using Xunit;
 using Microsoft.AspNetCore.Mvc.Testing;
 using FluentAssertions;
+using FluentAssertions.Json;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
+using System;
 
 namespace KnockKnockApiIntegrationTests
 {
@@ -29,6 +32,7 @@ namespace KnockKnockApiIntegrationTests
             response.EnsureSuccessStatusCode(); // Status Code 200-299
             response.Content.Headers.ContentType.MediaType.Should().Be("application/json");
             response.Content.Headers.ContentType.CharSet.Should().Be("utf-8");
+            new Guid(JToken.Parse(content).Value<string>()).Should().Be(KnockKnockApi.Controllers.TokenController.TOKEN);
         }
     }
 }
