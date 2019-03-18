@@ -2,14 +2,29 @@
 
 namespace KnockKnockApi.Library
 {
+    /// <summary>
+    /// Class for representing triangles.
+    /// </summary>
     public class Triangle
     {
+        /// <summary>
+        /// The different type of triangles
+        /// </summary>
         public enum TriangleTypes {
             Error=0, Scalene, Isosceles, Equilateral
         }
 
+        /// <summary>
+        /// Length of side a.
+        /// </summary>
         public int A;
+        /// <summary>
+        /// Length of side b.
+        /// </summary>
         public int B;
+        /// <summary>
+        /// Length of side c.
+        /// </summary>
         public int C;
 
         public Triangle(int a, int b, int c)
@@ -23,6 +38,10 @@ namespace KnockKnockApi.Library
             C = c;
         }
 
+        /// <summary>
+        /// Determines the type of triangle.
+        /// </summary>
+        /// <returns>TriangleTypes</returns>
         public TriangleTypes Characterise()
         {
             if (A == B && B == C)

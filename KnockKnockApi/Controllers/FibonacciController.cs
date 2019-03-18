@@ -15,7 +15,7 @@ namespace KnockKnockApi.Controllers
 		/// Returns the nth fibonacci number.
 		/// </summary>
 		/// <param name="n">The index (n) of the fibonacci sequence</param>
-		// GET: api/fibonacci
+		/// <response code="200">int64</response>
 		[HttpGet]
 		public IActionResult Get(long n)
 		{
