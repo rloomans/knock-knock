@@ -10,7 +10,7 @@ namespace KnockKnockApi.Library
         public static long Calculate(long n)
         {
             if (n <= -93 || n >= 93) {
-                throw new System.ArgumentOutOfRangeException(nameof(n), "Invalid index");
+                throw new System.ArgumentOutOfRangeException(nameof(n), "Index out of range");
             }
 
             if (n == 0) return 0;

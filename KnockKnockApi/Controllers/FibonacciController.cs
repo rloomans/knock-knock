@@ -24,7 +24,7 @@ namespace AspNetCoreDemoApp.Controllers
 			}
 			catch (System.ArgumentException e)
             {
-                return Json(new { Error = e.ToString() });
+                return Json(new { Error = e.Message });
             }
 		}
 	}
