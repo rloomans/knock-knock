@@ -32,7 +32,8 @@ namespace KnockKnockApiIntegrationTests
 
             // Assert
             response.EnsureSuccessStatusCode(); // Status Code 200-299
-            response.Content.Headers.ContentType.ToString().Should().Be("application/json; charset=utf-8");
+            response.Content.Headers.ContentType.MediaType.Should().Be("application/json");
+            response.Content.Headers.ContentType.CharSet.Should().Be("utf-8");
         }
     }
 }
