@@ -7,10 +7,10 @@ namespace KnockKnockApiTests
     public class TriangleTypeTests
     {
         [Theory]
-        [InlineData(4, 4, 4, "Equilateral")]
-        [InlineData(4, 4, 5, "Isosceles")]
-        [InlineData(3, 4, 5, "Scalene")]
-        public void CheckTriangleType(int a, int b, int c, string expected_result)
+        [InlineData(4, 4, 4, Triangle.TriangleTypes.Equilateral)]
+        [InlineData(4, 4, 5, Triangle.TriangleTypes.Isosceles)]
+        [InlineData(3, 4, 5, Triangle.TriangleTypes.Scalene)]
+        public void CheckTriangleType(int a, int b, int c, Triangle.TriangleTypes expected_result)
         {
             // Arrange
             var triangle = new Triangle(a, b, c);

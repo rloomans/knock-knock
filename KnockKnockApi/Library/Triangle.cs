@@ -4,6 +4,10 @@ namespace KnockKnockApi.Library
 {
     public class Triangle
     {
+        public enum TriangleTypes {
+            Error=0, Scalene, Isosceles, Equilateral
+        }
+
         public int A;
         public int B;
         public int C;
@@ -19,18 +23,18 @@ namespace KnockKnockApi.Library
             C = c;
         }
 
-        public string Characterise()
+        public TriangleTypes Characterise()
         {
             if (A == B && B == C)
             {
-                return "Equilateral";
+                return TriangleTypes.Equilateral;
             }
             else if (A == B || B == C || C == A)
             {
-                return "Isosceles";
+                return TriangleTypes.Isosceles;
             }
 
-            return "Scalene";
+            return TriangleTypes.Scalene;
         }
     }
 }
