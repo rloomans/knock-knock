@@ -10,11 +10,17 @@ namespace KnockKnockApi.Controllers
 	{
 		// GET: api/triangletype
 		[HttpGet]
-		public JsonResult Get(int a, int b, int c)
+		public IActionResult Get(int a, int b, int c)
 		{
-            var triangle = new Triangle(a, b, c);
+			try {
+	            var triangle = new Triangle(a, b, c);
 
-			return Json(triangle.Characterise());
+				return Ok(triangle.Characterise());
+			}
+			catch (System.ArgumentException e)
+            {
+                return BadRequest(new { Error = e.Message });
+            }
 		}
 	}
 }
