@@ -1,6 +1,6 @@
-using Xunit;
 using FluentAssertions;
 using KnockKnockApi.Library;
+using Xunit;
 
 namespace KnockKnockApiTests
 {

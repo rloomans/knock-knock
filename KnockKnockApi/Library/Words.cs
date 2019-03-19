@@ -4,52 +4,50 @@ using System.Collections.Generic;
 namespace KnockKnockApi.Library
 {
     /// <summary>
-    /// Class for lists of words.
+    ///     Class for lists of words.
     /// </summary>
     public class Words
     {
         private readonly List<string> _words = new List<string>();
 
         /// <summary>
-        /// Construct a Words instance from a string by splitting on spaces
+        ///     Construct a Words instance from a string by splitting on spaces
         /// </summary>
         /// <param name="sentence">A sentence</param>
         public Words(string sentence)
         {
             if (string.IsNullOrEmpty(sentence)) return;
-            
-            foreach(var word in sentence.Split(" ")) {
-                _words.Add(word);
-            }
+
+            foreach (var word in sentence.Split(" ")) _words.Add(word);
         }
 
         /// <summary>
-        /// Construct a Words instance from a sequence of strings
+        ///     Construct a Words instance from a sequence of strings
         /// </summary>
         /// <param name="words">A sequence of words</param>
-        protected Words(IEnumerable<string> words) {
+        protected Words(IEnumerable<string> words)
+        {
             _words.AddRange(words);
         }
 
         /// <summary>
-        /// Convert the word list to a string. 
+        ///     Convert the word list to a string.
         /// </summary>
         /// <returns>string</returns>
-        public override string ToString() 
+        public override string ToString()
         {
             return string.Join(' ', _words);
         }
 
         /// <summary>
-        /// Creates a new Words instance with each word reversed.
+        ///     Creates a new Words instance with each word reversed.
         /// </summary>
         /// <returns>Words</returns>
-        public Words ReverseWords() {
+        public Words ReverseWords()
+        {
             var reversedWords = new List<string>();
 
-            foreach (var word in _words) {
-                reversedWords.Add(_reverse(word));
-            }
+            foreach (var word in _words) reversedWords.Add(_reverse(word));
 
             return new Words(reversedWords);
         }

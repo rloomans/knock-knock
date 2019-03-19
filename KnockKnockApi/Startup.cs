@@ -19,11 +19,12 @@ namespace KnockKnockApi
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info {
+                c.SwaggerDoc("v1", new Info
+                {
                     Title = "Knock Knock Zero API",
                     Description = "Knock Knock Zero API",
-                    Version = "v1",
-                 });
+                    Version = "v1"
+                });
 
                 // Set the comments path for the Swagger JSON and UI.
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
@@ -36,17 +37,11 @@ namespace KnockKnockApi
         {
             app.UseStaticFiles();
 
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
 
             app.UseSwagger();
 
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Knock Knock V1");
-            });
+            app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Knock Knock V1"); });
 
             app.UseMvc();
         }

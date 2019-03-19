@@ -1,7 +1,7 @@
-using Xunit;
+using System;
 using FluentAssertions;
 using KnockKnockApi.Library;
-using System;
+using Xunit;
 
 namespace KnockKnockApiTests
 {

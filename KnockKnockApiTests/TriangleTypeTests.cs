@@ -1,6 +1,6 @@
-using Xunit;
 using FluentAssertions;
 using KnockKnockApi.Library;
+using Xunit;
 
 namespace KnockKnockApiTests
 {
@@ -15,7 +15,7 @@ namespace KnockKnockApiTests
         public void CheckTriangleType(int a, int b, int c, Triangle.TriangleTypes expected_result)
         {
             // Arrange
-            var triangle = new Triangle { A = a, B = b, C = c };
+            var triangle = new Triangle {A = a, B = b, C = c};
 
             // Act
             var result = triangle.Characterise();

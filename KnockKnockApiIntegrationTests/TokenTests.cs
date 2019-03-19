@@ -1,17 +1,19 @@
-using Xunit;
-using Microsoft.AspNetCore.Mvc.Testing;
-using FluentAssertions;
-using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
 using System;
+using System.Threading.Tasks;
+using FluentAssertions;
+using KnockKnockApi;
+using KnockKnockApi.Controllers;
+using Microsoft.AspNetCore.Mvc.Testing;
+using Newtonsoft.Json.Linq;
+using Xunit;
 
 namespace KnockKnockApiIntegrationTests
 {
-    public class TokenTests : IClassFixture<WebApplicationFactory<KnockKnockApi.Startup>>
+    public class TokenTests : IClassFixture<WebApplicationFactory<Startup>>
     {
-        private readonly WebApplicationFactory<KnockKnockApi.Startup> _factory;
+        private readonly WebApplicationFactory<Startup> _factory;
 
-        public TokenTests(WebApplicationFactory<KnockKnockApi.Startup> factory)
+        public TokenTests(WebApplicationFactory<Startup> factory)
         {
             _factory = factory;
         }
@@ -31,7 +33,7 @@ namespace KnockKnockApiIntegrationTests
             response.EnsureSuccessStatusCode(); // Status Code 200-299
             response.Content.Headers.ContentType.MediaType.Should().Be("application/json");
             response.Content.Headers.ContentType.CharSet.Should().Be("utf-8");
-            new Guid(JToken.Parse(content).Value<string>()).Should().Be(KnockKnockApi.Controllers.TokenController.Token);
+            new Guid(JToken.Parse(content).Value<string>()).Should().Be(TokenController.Token);
         }
     }
 }
