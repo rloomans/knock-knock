@@ -22,7 +22,7 @@ namespace KnockKnockApi.Controllers
 		public IActionResult Get(int a, int b, int c)
 		{
 			try {
-	            var triangle = new Triangle(a, b, c);
+	            var triangle = new Triangle { A = a, B = b, C = c };
 
 				return Ok(triangle.Characterise().ToString());
 			}

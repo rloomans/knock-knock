@@ -27,23 +27,15 @@ namespace KnockKnockApi.Library
         /// </summary>
         public int C;
 
-        public Triangle(int a, int b, int c)
-        {
-            if (a < 1) throw new ArgumentOutOfRangeException(nameof(a), "Invalid length");
-            if (b < 1) throw new ArgumentOutOfRangeException(nameof(b), "Invalid length");
-            if (c < 1) throw new ArgumentOutOfRangeException(nameof(c), "Invalid length");
-
-            A = a;
-            B = b;
-            C = c;
-        }
-
         /// <summary>
         /// Determines the type of triangle.
         /// </summary>
         /// <returns>TriangleTypes</returns>
         public TriangleTypes Characterise()
         {
+            if (A <= 0 || B <= 0 || C <= 0)
+                return TriangleTypes.Error;
+            
             if (A == B && B == C)
             {
                 return TriangleTypes.Equilateral;
