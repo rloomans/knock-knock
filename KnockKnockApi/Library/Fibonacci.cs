@@ -8,6 +8,8 @@ namespace KnockKnockApi.Library
     /// </summary>
     public static class Fibonacci
     {
+        private const long IndexLimit = 92;
+
         private static readonly Dictionary<long, long> Cache = new Dictionary<long, long>();
 
         /// <summary>
@@ -17,7 +19,7 @@ namespace KnockKnockApi.Library
         /// <returns>long</returns>
         public static long Calculate(long n)
         {
-            if (n <= -93 || n >= 93) throw new ArgumentOutOfRangeException(nameof(n), "Index out of range");
+            if (n < -IndexLimit || n > IndexLimit) throw new ArgumentOutOfRangeException(nameof(n), "Index out of range");
 
             if (n == 0)
                 return 0;

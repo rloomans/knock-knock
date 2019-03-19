@@ -8,6 +8,8 @@ namespace KnockKnockApi.Library
     /// </summary>
     public class Words
     {
+        private const string WordSeparator = " ";
+        
         private readonly List<string> _words = new List<string>();
 
         /// <summary>
@@ -18,7 +20,7 @@ namespace KnockKnockApi.Library
         {
             if (string.IsNullOrEmpty(sentence)) return;
 
-            foreach (var word in sentence.Split(" ")) _words.Add(word);
+            foreach (var word in sentence.Split(WordSeparator)) _words.Add(word);
         }
 
         /// <summary>

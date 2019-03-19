@@ -41,7 +41,7 @@ namespace KnockKnockApiIntegrationTests
         [InlineData("/api/TriangleType?a=3&b=4&c=2", "Scalene")]
         [InlineData("/api/TriangleType?a=4&b=2&c=3", "Scalene")]
         [InlineData("/api/TriangleType?a=4&b=4&c=2", "Isosceles")]
-        public async Task GetTriangeType(string url, string expected_result)
+        public async Task GetTriangleType(string url, string expectedResult)
         {
             // Arrange
             var client = _factory.CreateClient();
@@ -54,7 +54,7 @@ namespace KnockKnockApiIntegrationTests
             response.EnsureSuccessStatusCode(); // Status Code 200-299
             response.Content.Headers.ContentType.MediaType.Should().Be("application/json");
             response.Content.Headers.ContentType.CharSet.Should().Be("utf-8");
-            JToken.Parse(content).Value<string>().Should().Be(expected_result);
+            JToken.Parse(content).Value<string>().Should().Be(expectedResult);
         }
     }
 }

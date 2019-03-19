@@ -16,7 +16,7 @@ namespace KnockKnockApiTests
         [InlineData(3, 1, 1, Triangle.TriangleTypes.Error)]
         [InlineData(1, 3, 1, Triangle.TriangleTypes.Error)]
         [InlineData(1, 1, 3, Triangle.TriangleTypes.Error)]
-        public void CheckTriangleType(int a, int b, int c, Triangle.TriangleTypes expected_result)
+        public void CheckTriangleType(int a, int b, int c, Triangle.TriangleTypes expectedResult)
         {
             // Arrange
             var triangle = new Triangle {A = a, B = b, C = c};
@@ -25,7 +25,7 @@ namespace KnockKnockApiTests
             var result = triangle.Characterise();
 
             // Assert
-            result.Should().Be(expected_result);
+            result.Should().Be(expectedResult);
         }
     }
 }
