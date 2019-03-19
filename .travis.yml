@@ -1,2 +1,7 @@
-nguage: csharp
-solution: KnockKnockApi.sln
+language: csharp
+mono: none
+dotnet: 2.2.105
+script:
+ - dotnet restore
+ - dotnet build
+ - dotnet test
