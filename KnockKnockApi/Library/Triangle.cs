@@ -45,7 +45,7 @@
 
             // If sum of two sides is equal to the third, then you really have a line
             // if the sum is less than the third, you can't even theoretically join up the polygon
-            if (A + B <= C || B + C <= A || C + A <= B)
+            if ((long)A + B <= C || (long)B + C <= A || (long)C + A <= B)
                 return TriangleTypes.Error;
 
             if (A == B && B == C)

@@ -10,6 +10,7 @@ namespace KnockKnockApiTests
         [InlineData(4, 4, 4, Triangle.TriangleTypes.Equilateral)]
         [InlineData(4, 4, 5, Triangle.TriangleTypes.Isosceles)]
         [InlineData(3, 4, 5, Triangle.TriangleTypes.Scalene)]
+        [InlineData(2147483647, 2147483647, 2147483647, Triangle.TriangleTypes.Equilateral)]
         [InlineData(3, 0, 5, Triangle.TriangleTypes.Error)]
         [InlineData(3, 4, -1, Triangle.TriangleTypes.Error)]
         [InlineData(3, 1, 1, Triangle.TriangleTypes.Error)]
