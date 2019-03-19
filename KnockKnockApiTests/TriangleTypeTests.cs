@@ -12,6 +12,9 @@ namespace KnockKnockApiTests
         [InlineData(3, 4, 5, Triangle.TriangleTypes.Scalene)]
         [InlineData(3, 0, 5, Triangle.TriangleTypes.Error)]
         [InlineData(3, 4, -1, Triangle.TriangleTypes.Error)]
+        [InlineData(3, 1, 1, Triangle.TriangleTypes.Error)]
+        [InlineData(1, 3, 1, Triangle.TriangleTypes.Error)]
+        [InlineData(1, 1, 3, Triangle.TriangleTypes.Error)]
         public void CheckTriangleType(int a, int b, int c, Triangle.TriangleTypes expected_result)
         {
             // Arrange

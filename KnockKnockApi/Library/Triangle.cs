@@ -39,7 +39,13 @@
         /// <returns>TriangleTypes</returns>
         public TriangleTypes Characterise()
         {
+            // Can't have negative length
             if (A <= 0 || B <= 0 || C <= 0)
+                return TriangleTypes.Error;
+
+            // If sum of two sides is equal to the third, then you really have a line
+            // if the sum is less than the third, you can't even theoretically join up the polygon
+            if (A + B <= C || B + C <= A || C + A <= B)
                 return TriangleTypes.Error;
 
             if (A == B && B == C)
