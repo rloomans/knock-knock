@@ -13,7 +13,7 @@ namespace KnockKnockApiTests
         [InlineData(" bar", " rab")]
         [InlineData("foo!", "!oof")]
         [InlineData("Foo", "ooF")]
-        public void ReverseWords(string sentence, string expected_result)
+        public void ReverseWords(string sentence, string expectedResult)
         {
             // Arrange
             var words = new Words(sentence);
@@ -22,7 +22,7 @@ namespace KnockKnockApiTests
             var result = words.ReverseWords().ToString();
 
             // Assert
-            result.Should().Be(expected_result);
+            result.Should().Be(expectedResult);
         }
     }
 }

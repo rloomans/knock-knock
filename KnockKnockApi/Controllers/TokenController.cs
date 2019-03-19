@@ -15,7 +15,7 @@ namespace KnockKnockApi.Controllers
 		/// Token from Readify.
 		/// </summary>
 		/// <returns></returns>
-		public static Guid TOKEN = new Guid("6a0cc61b-6f3a-45da-ba53-15acd962c1d5");
+		public static readonly Guid Token = new Guid("6a0cc61b-6f3a-45da-ba53-15acd962c1d5");
 
 		/// <summary>
 		/// Your token.
@@ -24,7 +24,7 @@ namespace KnockKnockApi.Controllers
 		[HttpGet]
 		public JsonResult Get()
 		{
-			return Json(TOKEN);
+			return Json(Token);
 		}
 	}
 }

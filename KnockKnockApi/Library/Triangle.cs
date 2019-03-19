@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace KnockKnockApi.Library
+﻿namespace KnockKnockApi.Library
 {
     /// <summary>
     /// Class for representing triangles.
@@ -8,11 +6,13 @@ namespace KnockKnockApi.Library
     public class Triangle
     {
         /// <summary>
-        /// The different type of triangles
+        /// The different types of triangles
         /// </summary>
+#pragma warning disable CS1591
         public enum TriangleTypes {
             Error=0, Scalene, Isosceles, Equilateral
         }
+#pragma warning restore CS1591
 
         /// <summary>
         /// Length of side a.
@@ -37,13 +37,10 @@ namespace KnockKnockApi.Library
                 return TriangleTypes.Error;
             
             if (A == B && B == C)
-            {
                 return TriangleTypes.Equilateral;
-            }
-            else if (A == B || B == C || C == A)
-            {
+            
+            if (A == B || B == C || C == A)
                 return TriangleTypes.Isosceles;
-            }
 
             return TriangleTypes.Scalene;
         }

@@ -24,13 +24,13 @@ namespace KnockKnockApiTests
         [InlineData(-46, -1836311903)]
         [InlineData(-47, -2971215073)]
         [InlineData(-92, -7540113804746346429)]
-        public void CheckFibonacci(long n, long expected_result)
+        public void CheckFibonacci(long n, long expectedResult)
         {
             // Act
             var result = Fibonacci.Calculate(n);
 
             // Assert
-            result.Should().Be(expected_result);
+            result.Should().Be(expectedResult);
         }
 
         [Theory]
