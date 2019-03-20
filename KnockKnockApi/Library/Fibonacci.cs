@@ -27,7 +27,7 @@ namespace KnockKnockApi.Library
             if (n == 1 || n == 2)
                 return 1;
 
-            if (n < 0) return -1 * Calculate(-1 * n);
+            if (n < 0) return (n % 2 == 0 ? -1 : 1) * Calculate(-1 * n);
 
             long result;
 
