@@ -23,16 +23,9 @@ namespace KnockKnockApi.Controllers
 	    [HttpGet]
         public IActionResult Get(int a, int b, int c)
         {
-            try
-            {
-                var triangle = new Triangle {A = a, B = b, C = c};
+            var triangle = new Triangle {A = a, B = b, C = c};
 
-                return Ok(triangle.Characterise().ToString());
-            }
-            catch (ArgumentException e)
-            {
-                return BadRequest(new {Error = e.Message});
-            }
+            return Ok(triangle.Characterise().ToString());
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using FluentAssertions;
 using KnockKnockApi;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Newtonsoft.Json.Linq;
 using Xunit;
@@ -55,6 +56,29 @@ namespace KnockKnockApiIntegrationTests
             response.Content.Headers.ContentType.MediaType.Should().Be("application/json");
             response.Content.Headers.ContentType.CharSet.Should().Be("utf-8");
             JToken.Parse(content).Value<string>().Should().Be(expectedResult);
+        }
+
+        [Theory]
+        [InlineData("/api/TriangleType?a=a")]
+        [InlineData("/api/TriangleType?a=a&b=1&c=1")]
+        [InlineData("/api/TriangleType?a=1&b=b&c=1")]
+        [InlineData("/api/TriangleType?a=1&b=1&c=c")]
+        [InlineData("/api/TriangleType?a=&b=1&c=1")]
+        [InlineData("/api/TriangleType?a=1&b=&c=1")]
+        [InlineData("/api/TriangleType?a=1&b=1&c=")]
+        public async Task GetTriangleType_BadRequest(string url)
+        {
+            // Arrange
+            var client = _factory.CreateClient();
+
+            // Act
+            var response = await client.GetAsync(url);
+            var content = await response.Content.ReadAsStringAsync();
+
+            // Assert
+            response.StatusCode.Should().Be(StatusCodes.Status400BadRequest);
+            response.Content.Headers.ContentType.MediaType.Should().Be("application/json");
+            response.Content.Headers.ContentType.CharSet.Should().Be("utf-8");
         }
     }
 }
