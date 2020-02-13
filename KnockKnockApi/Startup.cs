@@ -4,6 +4,8 @@ using System.Reflection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace KnockKnockApi
@@ -14,12 +16,11 @@ namespace KnockKnockApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvcCore()
-                .AddJsonFormatters()
                 .AddApiExplorer();
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info
+                c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Title = "Knock Knock Zero API",
                     Description = "Knock Knock Zero API",
@@ -33,17 +34,21 @@ namespace KnockKnockApi
             });
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseStaticFiles();
 
             if (env.IsDevelopment()) app.UseDeveloperExceptionPage();
 
+            app.UseRouting();
+
             app.UseSwagger();
 
             app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Knock Knock V1"); });
 
-            app.UseMvc();
+            app.UseEndpoints(endpoints => {
+                endpoints.MapControllers();
+            });
         }
     }
 #pragma warning restore CS1591
